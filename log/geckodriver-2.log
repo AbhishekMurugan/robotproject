@@ -1,0 +1,19 @@
+1673928298131	geckodriver	INFO	Listening on 127.0.0.1:50636
+1673928301222	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50637" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\40032433\\AppData\\Local\\Temp\\rust_mozprofileRHyVwE"
+1673928301920	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\40032433\\AppData\\Local\\Temp\\rust_mozprofileRHyVwE\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:50637/devtools/browser/303bc947-4428-4118-8a8f-f978354dbb08
+1673928304628	Marionette	INFO	Listening on port 50673
+Read port: 50673
+1673928304680	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+1673928333078	Marionette	INFO	Stopped listening on port 50673
+Marionette threw an error: NotFoundError: WindowGlobalParent.getActor: No such JSWindowActor 'MarionetteCommands'
+getMarionetteCommandsActorProxy/get/<@chrome://remote/content/marionette/actors/MarionetteCommandsParent.jsm:332:65
+unregisterCommandsActor@chrome://remote/content/marionette/actors/MarionetteCommandsParent.jsm:396:15
+GeckoDriver.prototype.deleteSession@chrome://remote/content/marionette/driver.js:2132:3
+onClosed@chrome://remote/content/marionette/server.js:209:17
+close@chrome://remote/content/marionette/transport.js:221:18
+onInputStreamReady@chrome://remote/content/marionette/transport.js:375:14
+
