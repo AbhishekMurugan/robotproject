@@ -42,7 +42,20 @@ TC1
     Input Text    xpath=//android.widget.EditText[@content-desc="Password"]    abhi@gmail.com
     Wait Until Page Contains Element    xpath=//android.widget.TextView[@text='CREATE']
     Click Element    xpath=//android.widget.TextView[@text='CREATE']
-    
-
     Sleep    5s
     [Teardown]      Close Application
+    
+TC2
+    [Documentation]     #working with native app
+    Open Application    remote_url=http://localhost:4723/wd/hub
+    ...     platformName=android
+    ...     deviceName=vivo
+    ...     appPackage=org.khanacademy.android
+    ...     appActivity=org.khanacademy.android.ui.library.mainA
+    Set Appium Timeout    30s
+    Wait Until Page Contains Element    xpath=//*[@text='Dismiss']      30s
+    Click Element    xpath=//*[@text='Dismiss']
+    Wait Until Page Contains Element    xpath=//android.widget.Button[@content-desc="Search tab"]    30s
+    Click Element       xpath=//android.widget.Button[@content-desc="Search tab"]
+    Wait Until Page Contains Element    xpath=//android.widget.TextView[@text="Arts and humanities"]    30s
+    Click Element       xpath=//android.widget.TextView[@text="Arts and humanities"]
