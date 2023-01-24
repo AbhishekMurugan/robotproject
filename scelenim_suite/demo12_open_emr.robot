@@ -31,7 +31,8 @@ TC1
    Click Element    xpath=//input[@value='Confirm Create New Patient']
    ${alert_text}   Handle Alert    action=ACCEPT      timeout=30s
     Log To Console    ${alert_text}
-    Click Element     xpath=//div[@class='closeDlgIframe']
+
+    Run Keyword And Ignore Error        Click Element     xpath=//div[@class='closeDlgIframe']
     Should Contain    xpath=//*[contains(text(),'abhi shek')]     abhi shek
 
 

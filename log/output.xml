@@ -1,187 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.4 on win32)" generated="20230124 11:28:56.438" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.10.4 on win32)" generated="20230124 11:35:57.922" rpa="false" schemaversion="3">
 <suite id="s1" name="Demo12 Open Emr" source="C:\Users\40032433\Robot_project1\scelenim_suite\demo12_open_emr.robot">
 <test id="s1-t1" name="TC1" line="5">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>url=http://demo.openemr.io/b/openemr/</arg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230124 11:28:56.771" level="INFO">Opening browser 'chrome' to base url 'http://demo.openemr.io/b/openemr/'.</msg>
-<status status="PASS" starttime="20230124 11:28:56.771" endtime="20230124 11:29:08.008"/>
+<msg timestamp="20230124 11:35:58.302" level="INFO">Opening browser 'chrome' to base url 'http://demo.openemr.io/b/openemr/'.</msg>
+<status status="PASS" starttime="20230124 11:35:58.302" endtime="20230124 11:36:38.678"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230124 11:29:08.009" endtime="20230124 11:29:08.140"/>
+<status status="PASS" starttime="20230124 11:36:38.678" endtime="20230124 11:36:38.684"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230124 11:29:08.140" endtime="20230124 11:29:08.148"/>
+<status status="PASS" starttime="20230124 11:36:38.684" endtime="20230124 11:36:38.684"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:authUser</arg>
 <arg>admin</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:08.148" level="INFO">Typing text 'admin' into text field 'id:authUser'.</msg>
-<status status="PASS" starttime="20230124 11:29:08.148" endtime="20230124 11:29:08.294"/>
+<msg timestamp="20230124 11:36:38.693" level="INFO">Typing text 'admin' into text field 'id:authUser'.</msg>
+<status status="PASS" starttime="20230124 11:36:38.684" endtime="20230124 11:36:38.809"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>id:clearPass</arg>
 <arg>pass</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:08.294" level="INFO">Typing password into text field 'id:clearPass'.</msg>
-<msg timestamp="20230124 11:29:08.350" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230124 11:29:08.431" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230124 11:29:08.294" endtime="20230124 11:29:08.431"/>
+<msg timestamp="20230124 11:36:38.809" level="INFO">Typing password into text field 'id:clearPass'.</msg>
+<msg timestamp="20230124 11:36:38.873" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230124 11:36:38.952" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230124 11:36:38.809" endtime="20230124 11:36:38.952"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>xpath=//select[@class="form-control"]</arg>
 <arg>English (Indian)</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230124 11:29:08.431" level="INFO">Selecting options from selection list 'xpath=//select[@class="form-control"]' by label English (Indian).</msg>
-<status status="PASS" starttime="20230124 11:29:08.431" endtime="20230124 11:29:08.560"/>
+<msg timestamp="20230124 11:36:38.952" level="INFO">Selecting options from selection list 'xpath=//select[@class="form-control"]' by label English (Indian).</msg>
+<status status="PASS" starttime="20230124 11:36:38.952" endtime="20230124 11:36:39.103"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id=login-button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:08.563" level="INFO">Clicking button 'id=login-button'.</msg>
-<status status="PASS" starttime="20230124 11:29:08.561" endtime="20230124 11:29:17.555"/>
+<msg timestamp="20230124 11:36:39.103" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20230124 11:36:39.103" endtime="20230124 11:36:48.495"/>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>xpath=//div[text()='Patient']</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20230124 11:29:17.559" level="INFO">Simulating Mouse Over on element 'xpath=//div[text()='Patient']'.</msg>
-<status status="PASS" starttime="20230124 11:29:17.556" endtime="20230124 11:29:17.859"/>
+<msg timestamp="20230124 11:36:48.495" level="INFO">Simulating Mouse Over on element 'xpath=//div[text()='Patient']'.</msg>
+<status status="PASS" starttime="20230124 11:36:48.495" endtime="20230124 11:36:48.795"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//div[@class="menuLabel px-1 dropdown-toggle oe-dropdown-toggle"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:17.859" level="INFO">Clicking element 'xpath=//div[@class="menuLabel px-1 dropdown-toggle oe-dropdown-toggle"]'.</msg>
-<status status="PASS" starttime="20230124 11:29:17.859" endtime="20230124 11:29:17.920"/>
+<msg timestamp="20230124 11:36:48.795" level="INFO">Clicking element 'xpath=//div[@class="menuLabel px-1 dropdown-toggle oe-dropdown-toggle"]'.</msg>
+<status status="PASS" starttime="20230124 11:36:48.795" endtime="20230124 11:36:48.852"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//div[text()='New/Search']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:17.920" level="INFO">Clicking element 'xpath=//div[text()='New/Search']'.</msg>
-<status status="PASS" starttime="20230124 11:29:17.920" endtime="20230124 11:29:17.997"/>
+<msg timestamp="20230124 11:36:48.852" level="INFO">Clicking element 'xpath=//div[text()='New/Search']'.</msg>
+<status status="PASS" starttime="20230124 11:36:48.852" endtime="20230124 11:36:48.940"/>
 </kw>
 <kw name="Select Frame" library="SeleniumLibrary">
 <arg>xpath=//iframe[@src='/b/openemr/interface/new/new.php']</arg>
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230124 11:29:17.997" level="INFO">Selecting frame 'xpath=//iframe[@src='/b/openemr/interface/new/new.php']'.</msg>
-<status status="PASS" starttime="20230124 11:29:17.997" endtime="20230124 11:29:21.733"/>
+<msg timestamp="20230124 11:36:48.940" level="INFO">Selecting frame 'xpath=//iframe[@src='/b/openemr/interface/new/new.php']'.</msg>
+<status status="PASS" starttime="20230124 11:36:48.940" endtime="20230124 11:37:00.456"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//input[@id='form_fname']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:21.736" level="INFO">Clicking element 'xpath=//input[@id='form_fname']'.</msg>
-<status status="PASS" starttime="20230124 11:29:21.734" endtime="20230124 11:29:22.063"/>
+<msg timestamp="20230124 11:37:00.457" level="INFO">Clicking element 'xpath=//input[@id='form_fname']'.</msg>
+<status status="PASS" starttime="20230124 11:37:00.457" endtime="20230124 11:37:00.789"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:form_fname</arg>
 <arg>abhi</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:22.063" level="INFO">Typing text 'abhi' into text field 'id:form_fname'.</msg>
-<status status="PASS" starttime="20230124 11:29:22.063" endtime="20230124 11:29:22.161"/>
+<msg timestamp="20230124 11:37:00.789" level="INFO">Typing text 'abhi' into text field 'id:form_fname'.</msg>
+<status status="PASS" starttime="20230124 11:37:00.789" endtime="20230124 11:37:00.934"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//input[@id='form_lname']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:22.161" level="INFO">Clicking element 'xpath=//input[@id='form_lname']'.</msg>
-<status status="PASS" starttime="20230124 11:29:22.161" endtime="20230124 11:29:22.308"/>
+<msg timestamp="20230124 11:37:00.935" level="INFO">Clicking element 'xpath=//input[@id='form_lname']'.</msg>
+<status status="PASS" starttime="20230124 11:37:00.935" endtime="20230124 11:37:01.082"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:form_lname</arg>
 <arg>shek</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:22.308" level="INFO">Typing text 'shek' into text field 'id:form_lname'.</msg>
-<status status="PASS" starttime="20230124 11:29:22.308" endtime="20230124 11:29:22.501"/>
+<msg timestamp="20230124 11:37:01.082" level="INFO">Typing text 'shek' into text field 'id:form_lname'.</msg>
+<status status="PASS" starttime="20230124 11:37:01.082" endtime="20230124 11:37:01.285"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//input[@id='form_DOB']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:22.504" level="INFO">Clicking element 'xpath=//input[@id='form_DOB']'.</msg>
-<status status="PASS" starttime="20230124 11:29:22.501" endtime="20230124 11:29:22.636"/>
+<msg timestamp="20230124 11:37:01.285" level="INFO">Clicking element 'xpath=//input[@id='form_DOB']'.</msg>
+<status status="PASS" starttime="20230124 11:37:01.285" endtime="20230124 11:37:01.427"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:form_DOB</arg>
 <arg>24/01/2023</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:22.636" level="INFO">Typing text '24/01/2023' into text field 'id:form_DOB'.</msg>
-<status status="PASS" starttime="20230124 11:29:22.636" endtime="20230124 11:29:22.881"/>
+<msg timestamp="20230124 11:37:01.427" level="INFO">Typing text '24/01/2023' into text field 'id:form_DOB'.</msg>
+<status status="PASS" starttime="20230124 11:37:01.427" endtime="20230124 11:37:01.691"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>name:form_sex</arg>
 <arg>Male</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230124 11:29:22.881" level="INFO">Selecting options from selection list 'name:form_sex' by label Male.</msg>
-<status status="PASS" starttime="20230124 11:29:22.881" endtime="20230124 11:29:23.018"/>
+<msg timestamp="20230124 11:37:01.691" level="INFO">Selecting options from selection list 'name:form_sex' by label Male.</msg>
+<status status="PASS" starttime="20230124 11:37:01.691" endtime="20230124 11:37:01.844"/>
 </kw>
 <kw name="Select From List By Label" library="SeleniumLibrary">
 <arg>name:form_status</arg>
 <arg>Single</arg>
 <doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20230124 11:29:23.026" level="INFO">Selecting options from selection list 'name:form_status' by label Single.</msg>
-<status status="PASS" starttime="20230124 11:29:23.018" endtime="20230124 11:29:23.167"/>
+<msg timestamp="20230124 11:37:01.844" level="INFO">Selecting options from selection list 'name:form_status' by label Single.</msg>
+<status status="PASS" starttime="20230124 11:37:01.844" endtime="20230124 11:37:02.006"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:form_ss</arg>
 <arg>2424 3535</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:23.167" level="INFO">Typing text '2424 3535' into text field 'id:form_ss'.</msg>
-<status status="PASS" starttime="20230124 11:29:23.167" endtime="20230124 11:29:23.405"/>
+<msg timestamp="20230124 11:37:02.006" level="INFO">Typing text '2424 3535' into text field 'id:form_ss'.</msg>
+<status status="PASS" starttime="20230124 11:37:02.006" endtime="20230124 11:37:02.269"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//button[@id='create']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:23.405" level="INFO">Clicking element 'xpath=//button[@id='create']'.</msg>
-<status status="PASS" starttime="20230124 11:29:23.405" endtime="20230124 11:29:23.623"/>
+<msg timestamp="20230124 11:37:02.269" level="INFO">Clicking element 'xpath=//button[@id='create']'.</msg>
+<status status="PASS" starttime="20230124 11:37:02.269" endtime="20230124 11:37:02.514"/>
 </kw>
 <kw name="Unselect Frame" library="SeleniumLibrary">
 <doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20230124 11:29:23.624" endtime="20230124 11:29:23.635"/>
+<status status="PASS" starttime="20230124 11:37:02.515" endtime="20230124 11:37:02.520"/>
 </kw>
 <kw name="Select Frame" library="SeleniumLibrary">
 <arg>xpath=//iframe[@id='modalframe']</arg>
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230124 11:29:23.635" level="INFO">Selecting frame 'xpath=//iframe[@id='modalframe']'.</msg>
-<status status="PASS" starttime="20230124 11:29:23.635" endtime="20230124 11:29:24.419"/>
+<msg timestamp="20230124 11:37:02.520" level="INFO">Selecting frame 'xpath=//iframe[@id='modalframe']'.</msg>
+<status status="PASS" starttime="20230124 11:37:02.520" endtime="20230124 11:37:03.214"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//input[@value='Confirm Create New Patient']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:24.419" level="INFO">Clicking element 'xpath=//input[@value='Confirm Create New Patient']'.</msg>
-<status status="PASS" starttime="20230124 11:29:24.419" endtime="20230124 11:29:24.542"/>
+<msg timestamp="20230124 11:37:03.217" level="INFO">Clicking element 'xpath=//input[@value='Confirm Create New Patient']'.</msg>
+<status status="PASS" starttime="20230124 11:37:03.215" endtime="20230124 11:37:03.341"/>
 </kw>
 <kw name="Handle Alert" library="SeleniumLibrary">
 <var>${alert_text}</var>
 <arg>action=ACCEPT</arg>
 <arg>timeout=30s</arg>
 <doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230124 11:29:24.542" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:30</msg>
-<msg timestamp="20230124 11:29:29.624" level="INFO">${alert_text} = New Due Clinical Reminders  Assessment: Tobacco  (See the Clinical Reminders widget for more details)</msg>
-<status status="PASS" starttime="20230124 11:29:24.542" endtime="20230124 11:29:29.624"/>
+<msg timestamp="20230124 11:37:03.341" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:30</msg>
+<msg timestamp="20230124 11:37:13.999" level="INFO">${alert_text} = New Due Clinical Reminders  Assessment: Tobacco  (See the Clinical Reminders widget for more details)</msg>
+<status status="PASS" starttime="20230124 11:37:03.341" endtime="20230124 11:37:13.999"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${alert_text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230124 11:29:29.624" endtime="20230124 11:29:29.624"/>
+<status status="PASS" starttime="20230124 11:37:13.999" endtime="20230124 11:37:13.999"/>
 </kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>xpath=//div[@class='closeDlgIframe']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//div[@class='closeDlgIframe']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230124 11:29:29.630" level="INFO">Clicking element 'xpath=//div[@class='closeDlgIframe']'.</msg>
-<status status="PASS" starttime="20230124 11:29:29.630" endtime="20230124 11:29:29.698"/>
+<msg timestamp="20230124 11:37:13.999" level="INFO">Clicking element 'xpath=//div[@class='closeDlgIframe']'.</msg>
+<status status="PASS" starttime="20230124 11:37:13.999" endtime="20230124 11:37:14.081"/>
+</kw>
+<status status="PASS" starttime="20230124 11:37:13.999" endtime="20230124 11:37:14.082"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>xpath=//*[contains(text(),'abhi shek')]</arg>
 <arg>abhi shek</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230124 11:29:29.698" endtime="20230124 11:29:29.698"/>
+<status status="PASS" starttime="20230124 11:37:14.082" endtime="20230124 11:37:14.082"/>
 </kw>
-<status status="PASS" starttime="20230124 11:28:56.771" endtime="20230124 11:29:29.698"/>
+<status status="PASS" starttime="20230124 11:35:58.302" endtime="20230124 11:37:14.082"/>
 </test>
-<status status="PASS" starttime="20230124 11:28:56.442" endtime="20230124 11:29:29.707"/>
+<status status="PASS" starttime="20230124 11:35:57.926" endtime="20230124 11:37:14.082"/>
 </suite>
 <statistics>
 <total>
