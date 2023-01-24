@@ -39,3 +39,24 @@ TC1
     Click Element    android=UiSelector().textContains("OK")
 
     [Teardown]   Close Application
+
+TC2
+    [Documentation]     #working with native app
+     Open Application    remote_url=http://localhost:4723/wd/hub
+    ...     platformName=android
+    ...     deviceName=motoonrfusionplus
+    ...     app=C:${/}Users${/}40032433${/}Downloads${/}khan-academy-7-3-2.apk
+    Set Appium Timeout    20s
+    Run Keyword And Ignore Error    Wait Until Page Contains Element    xpath=//*[@text='Dismiss']
+    Run Keyword And Ignore Error    Click Element    xpath=//*[@text='Dismiss']
+    Wait Until Page Contains Element    xpath=//android.widget.Button[@content-desc="Search tab"]
+    Click Element       xpath=//android.widget.Button[@content-desc="Search tab"]
+    Wait Until Page Contains Element    xpath=//android.widget.TextView[@text="Arts and humanities"]
+    Click Element       xpath=//android.widget.TextView[@text="Arts and humanities"]
+    &{count}        Create Dictionary       strategy=-android uiautomator
+    ...     selector=UiSelector().text("Art of Asia")
+    Execute Script    mobile: scroll     &{count}
+
+    Click Element    android=UiSelector().text("Art of Asia")
+    Sleep    5s
+    [Teardown]      Close Application

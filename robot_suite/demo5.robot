@@ -6,6 +6,7 @@ Library    String
 *** Test Cases ***
 
 TC1
+    [Documentation]     #add and remove
     ${files}    List Files In Directory    path=C:${/}Users${/}40032433${/}Robot_project1${/}robot_suite${/}
     #Log To Console    ${files}
     Log List    ${files}

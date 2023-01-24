@@ -5,6 +5,7 @@ TC1
     Create Directory    path=C:\\mine\\demo123
 
 TC2
+    [Documentation]     #create directory
     Log To Console    C:\\mine\\demo123
     Log To Console    ${CURDIR}
     Log To Console    ${OUTPUT_DIR}

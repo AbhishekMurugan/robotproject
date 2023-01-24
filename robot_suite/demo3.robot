@@ -7,6 +7,7 @@ ${MOBILE_NUM}       123456654
 @{my_DETAILS}   name=abhi       role=trainer        mobile=8608332447
 *** Test Cases ***
 TC1
+    [Documentation]     #details
     ${my_name}      Set Variable    abhi
     Log To Console    ${my_name}
 TC2
