@@ -1,409 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.4 on win32)" generated="20230124 16:33:29.433" rpa="false" schemaversion="3">
-<suite id="s1" name="Demo5 Ios Nativeapp" source="C:\Users\40032433\Robot_project1\appium_suite\demo5_ios_nativeapp.robot">
-<test id="s1-t1" name="TC1" line="6">
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{dic}</var>
-<arg>buildName=k</arg>
-<arg>projectName=k project</arg>
-<arg>userName=abhikutty_pHvf6o</arg>
-<arg>accessKey=WKnoyhFUBjzAzJuhsNLK</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230124 16:33:29.714" level="INFO">&amp;{dic} = { buildName=k | projectName=k project | userName=abhikutty_pHvf6o | accessKey=WKnoyhFUBjzAzJuhsNLK }</msg>
-<status status="PASS" starttime="20230124 16:33:29.714" endtime="20230124 16:33:29.714"/>
+<robot generator="Robot 6.0.2 (Python 3.10.4 on win32)" generated="20230124 17:06:40.281" rpa="false" schemaversion="3">
+<suite id="s1" name="Demo1" source="C:\Users\40032433\Robot_project1\scelenim_suite\demo1.robot">
+<test id="s1-t1" name="TC5" line="34">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230124 17:06:40.607" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230124 17:06:40.607" endtime="20230124 17:06:42.378"/>
 </kw>
-<kw name="Open Application" library="AppiumLibrary">
-<arg>remote_url=http://hub.browserstack.com/wd/hub</arg>
-<arg>platformName=ios</arg>
-<arg>deviceName=iPhone 11 Pro</arg>
-<arg>app=bs://3867af14ce5abc77ea340648d686ce492e5c71c7</arg>
-<arg>platformVersion=13</arg>
-<arg>bstack:options=${dic}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" starttime="20230124 16:33:29.730" endtime="20230124 16:33:46.666"/>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>@{output}</var>
+<arg>Click Element</arg>
+<arg>xpath=//a</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230124 17:06:42.379" level="INFO">Clicking element 'xpath=//a'.</msg>
+<msg timestamp="20230124 17:06:42.567" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-73.png"&gt;&lt;img src="selenium-screenshot-73.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230124 17:06:42.567" level="FAIL">Element with locator 'xpath=//a' not found.</msg>
+<status status="FAIL" starttime="20230124 17:06:42.379" endtime="20230124 17:06:42.567"/>
 </kw>
-<kw name="Set Appium Timeout" library="AppiumLibrary">
-<arg>20s</arg>
-<doc>Sets the timeout in seconds used by various keywords.</doc>
-<status status="PASS" starttime="20230124 16:33:46.666" endtime="20230124 16:33:46.666"/>
+<msg timestamp="20230124 17:06:42.567" level="INFO">@{output} = [ FAIL | Element with locator 'xpath=//a' not found. ]</msg>
+<status status="PASS" starttime="20230124 17:06:42.378" endtime="20230124 17:06:42.567"/>
 </kw>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeTextField[@name="test-Username"]</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<msg timestamp="20230124 16:33:47.565" level="INFO">xpath criteria: //XCUIElementTypeTextField[@name="test-Username"]</msg>
-<status status="PASS" starttime="20230124 16:33:46.666" endtime="20230124 16:33:47.565"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230124 17:06:42.567" endtime="20230124 17:06:42.583"/>
 </kw>
-<kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeTextField[@name="test-Username"]</arg>
-<arg>standard_user</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20230124 16:33:47.565" level="INFO">Typing text 'standard_user' into text field 'xpath=//XCUIElementTypeTextField[@name="test-Username"]'</msg>
-<msg timestamp="20230124 16:33:50.836" level="INFO">xpath criteria: //XCUIElementTypeTextField[@name="test-Username"]</msg>
-<status status="PASS" starttime="20230124 16:33:47.565" endtime="20230124 16:33:50.841"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${output}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230124 17:06:42.584" endtime="20230124 17:06:42.584"/>
 </kw>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeSecureTextField[@name="test-Password"]</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<msg timestamp="20230124 16:33:52.060" level="INFO">xpath criteria: //XCUIElementTypeSecureTextField[@name="test-Password"]</msg>
-<status status="PASS" starttime="20230124 16:33:50.841" endtime="20230124 16:33:52.060"/>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeSecureTextField[@name="test-Password"]</arg>
-<arg>secret_sauce</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20230124 16:33:52.060" level="INFO">Typing text 'secret_sauce' into text field 'xpath=//XCUIElementTypeSecureTextField[@name="test-Password"]'</msg>
-<msg timestamp="20230124 16:33:54.517" level="INFO">xpath criteria: //XCUIElementTypeSecureTextField[@name="test-Password"]</msg>
-<status status="PASS" starttime="20230124 16:33:52.060" endtime="20230124 16:33:54.517"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeOther[@name="test-LOGIN"]</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20230124 16:33:54.533" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="test-LOGIN"]'.</msg>
-<msg timestamp="20230124 16:33:56.478" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="test-LOGIN"]</msg>
-<status status="PASS" starttime="20230124 16:33:54.517" endtime="20230124 16:33:56.478"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>xpath=(//XCUIElementTypeOther[@name="test-ADD TO CART"])</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<msg timestamp="20230124 16:33:58.794" level="INFO">xpath criteria: (//XCUIElementTypeOther[@name="test-ADD TO CART"])</msg>
-<status status="PASS" starttime="20230124 16:33:56.479" endtime="20230124 16:33:58.794"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>xpath=(//XCUIElementTypeOther[@name="test-ADD TO CART"])</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20230124 16:33:58.794" level="INFO">Clicking element 'xpath=(//XCUIElementTypeOther[@name="test-ADD TO CART"])'.</msg>
-<msg timestamp="20230124 16:34:02.429" level="INFO">xpath criteria: (//XCUIElementTypeOther[@name="test-ADD TO CART"])</msg>
-<status status="PASS" starttime="20230124 16:33:58.794" endtime="20230124 16:34:02.429"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>xpath=(//XCUIElementTypeOther[@name="test-ADD TO CART"])</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<msg timestamp="20230124 16:34:03.707" level="INFO">xpath criteria: (//XCUIElementTypeOther[@name="test-ADD TO CART"])</msg>
-<status status="PASS" starttime="20230124 16:34:02.429" endtime="20230124 16:34:03.707"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>xpath=(//XCUIElementTypeOther[@name="test-ADD TO CART"])</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20230124 16:34:03.723" level="INFO">Clicking element 'xpath=(//XCUIElementTypeOther[@name="test-ADD TO CART"])'.</msg>
-<msg timestamp="20230124 16:34:06.345" level="INFO">xpath criteria: (//XCUIElementTypeOther[@name="test-ADD TO CART"])</msg>
-<status status="PASS" starttime="20230124 16:34:03.707" endtime="20230124 16:34:06.345"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeOther[@name="test-Cart"]</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20230124 16:34:06.345" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="test-Cart"]'.</msg>
-<msg timestamp="20230124 16:34:08.684" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="test-Cart"]</msg>
-<status status="PASS" starttime="20230124 16:34:06.345" endtime="20230124 16:34:08.684"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeOther[@name="test-CHECKOUT"]</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<msg timestamp="20230124 16:34:09.675" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="test-CHECKOUT"]</msg>
-<status status="PASS" starttime="20230124 16:34:08.684" endtime="20230124 16:34:09.675"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeOther[@name="test-CHECKOUT"]</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20230124 16:34:09.689" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="test-CHECKOUT"]'.</msg>
-<msg timestamp="20230124 16:34:11.498" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="test-CHECKOUT"]</msg>
-<status status="PASS" starttime="20230124 16:34:09.675" endtime="20230124 16:34:11.498"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeTextField[@name="test-First Name"]</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<msg timestamp="20230124 16:34:12.438" level="INFO">xpath criteria: //XCUIElementTypeTextField[@name="test-First Name"]</msg>
-<status status="PASS" starttime="20230124 16:34:11.498" endtime="20230124 16:34:12.438"/>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeTextField[@name="test-First Name"]</arg>
-<arg>john</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20230124 16:34:12.438" level="INFO">Typing text 'john' into text field 'xpath=//XCUIElementTypeTextField[@name="test-First Name"]'</msg>
-<msg timestamp="20230124 16:34:15.636" level="INFO">xpath criteria: //XCUIElementTypeTextField[@name="test-First Name"]</msg>
-<status status="PASS" starttime="20230124 16:34:12.438" endtime="20230124 16:34:15.636"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeTextField[@name="test-Last Name"]</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<msg timestamp="20230124 16:34:16.693" level="INFO">xpath criteria: //XCUIElementTypeTextField[@name="test-Last Name"]</msg>
-<status status="PASS" starttime="20230124 16:34:15.636" endtime="20230124 16:34:16.693"/>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeTextField[@name="test-Last Name"]</arg>
-<arg>jo</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20230124 16:34:16.693" level="INFO">Typing text 'jo' into text field 'xpath=//XCUIElementTypeTextField[@name="test-Last Name"]'</msg>
-<msg timestamp="20230124 16:34:19.405" level="INFO">xpath criteria: //XCUIElementTypeTextField[@name="test-Last Name"]</msg>
-<status status="PASS" starttime="20230124 16:34:16.693" endtime="20230124 16:34:19.405"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeTextField[@name="test-Zip/Postal Code"]</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<msg timestamp="20230124 16:34:20.634" level="INFO">xpath criteria: //XCUIElementTypeTextField[@name="test-Zip/Postal Code"]</msg>
-<status status="PASS" starttime="20230124 16:34:19.405" endtime="20230124 16:34:20.634"/>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeTextField[@name="test-Zip/Postal Code"]</arg>
-<arg>100022</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20230124 16:34:20.642" level="INFO">Typing text '100022' into text field 'xpath=//XCUIElementTypeTextField[@name="test-Zip/Postal Code"]'</msg>
-<msg timestamp="20230124 16:34:23.280" level="INFO">xpath criteria: //XCUIElementTypeTextField[@name="test-Zip/Postal Code"]</msg>
-<status status="PASS" starttime="20230124 16:34:20.634" endtime="20230124 16:34:23.280"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>xpath=//XCUIElementTypeOther[@name="test-CONTINUE"]</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20230124 16:34:23.280" level="INFO">Clicking element 'xpath=//XCUIElementTypeOther[@name="test-CONTINUE"]'.</msg>
-<msg timestamp="20230124 16:34:29.038" level="INFO">xpath criteria: //XCUIElementTypeOther[@name="test-CONTINUE"]</msg>
-<status status="PASS" starttime="20230124 16:34:23.280" endtime="20230124 16:34:29.038"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>xpath=//XCUIElementTypeStaticText[@label='Payment Information']</arg>
-<arg>Payment Information</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230124 16:34:29.038" endtime="20230124 16:34:29.040"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>xpath=//XCUIElementTypeStaticText[@label='Shipping Information']</arg>
-<arg>Shipping Information</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230124 16:34:29.040" endtime="20230124 16:34:29.041"/>
-</kw>
-<kw name="Get Source" library="AppiumLibrary">
-<var>${app_source}</var>
-<doc>Returns the entire source of the current page.</doc>
-<msg timestamp="20230124 16:34:32.677" level="INFO">${app_source} = &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;AppiumAUT&gt;&lt;XCUIElementTypeApplication type="XCUIElementTypeApplication" name="SwagLabsMobileApp" label="SwagLabsMobileApp" enabled="true" visible="true" x="0" y=...</msg>
-<status status="PASS" starttime="20230124 16:34:29.042" endtime="20230124 16:34:32.677"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${output}[1]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230124 17:06:42.584" endtime="20230124 17:06:42.584"/>
 </kw>
 <kw name="Log" library="BuiltIn">
-<arg>${app_source}</arg>
+<arg>${output}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230124 16:34:32.677" level="INFO">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;AppiumAUT&gt;&lt;XCUIElementTypeApplication type="XCUIElementTypeApplication" name="SwagLabsMobileApp" label="SwagLabsMobileApp" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-  &lt;XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-        &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-          &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="375" height="44"/&gt;
-                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2 ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" label="ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" enabled="true" visible="false" x="-375" y="0" width="375" height="812"&gt;
-                      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" label="ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" enabled="true" visible="false" x="-375" y="0" width="375" height="812"&gt;
-                        &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" label="ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" enabled="true" visible="false" x="-375" y="0" width="375" height="812"&gt;
-                          &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" label="ALL ITEMS WEBVIEW QR CODE SCANNER GEO LOCATION DRAWING ABOUT LOGOUT RESET APP STATE" enabled="true" visible="false" x="-375" y="0" width="375" height="812"&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-Close" enabled="true" visible="false" x="-365" y="44" width="355" height="60"/&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-ALL ITEMS" label="ALL ITEMS" enabled="true" visible="false" x="-355" y="114" width="335" height="37"/&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-WEBVIEW" label="WEBVIEW" enabled="true" visible="false" x="-355" y="171" width="335" height="37"/&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-QR CODE SCANNER" label="QR CODE SCANNER" enabled="true" visible="false" x="-355" y="228" width="335" height="37"/&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-GEO LOCATION" label="GEO LOCATION" enabled="true" visible="false" x="-355" y="285" width="335" height="37"/&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-DRAWING" label="DRAWING" enabled="true" visible="false" x="-355" y="342" width="335" height="37"/&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-ABOUT" label="ABOUT" enabled="true" visible="false" x="-355" y="399" width="335" height="37"/&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-LOGOUT" label="LOGOUT" enabled="true" visible="false" x="-355" y="456" width="335" height="37"/&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-RESET APP STATE" label="RESET APP STATE" enabled="true" visible="false" x="-355" y="513" width="335" height="37"/&gt;
-                          &lt;/XCUIElementTypeOther&gt;
-                        &lt;/XCUIElementTypeOther&gt;
-                      &lt;/XCUIElementTypeOther&gt;
-                    &lt;/XCUIElementTypeOther&gt;
-                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                        &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                          &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page 2" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                                &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="2" label="2" enabled="true" visible="true" x="0" y="0" width="375" height="104"&gt;
-                                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="2" label="2" enabled="true" visible="true" x="0" y="0" width="375" height="104"&gt;
-                                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="headerContainer" enabled="true" visible="true" x="0" y="0" width="375" height="104"&gt;
-                                      &lt;XCUIElementTypeImage type="XCUIElementTypeImage" enabled="true" visible="false" x="0" y="0" width="375" height="104"/&gt;
-                                    &lt;/XCUIElementTypeOther&gt;
-                                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="10" y="54" width="71" height="40"&gt;
-                                      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-Menu" enabled="true" visible="true" x="10" y="54" width="40" height="40"&gt;
-                                        &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="10" y="54" width="40" height="40"/&gt;
-                                      &lt;/XCUIElementTypeOther&gt;
-                                    &lt;/XCUIElementTypeOther&gt;
-                                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="2" label="2" enabled="true" visible="true" x="294" y="49" width="71" height="50"&gt;
-                                      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-Cart" label="2" enabled="true" visible="true" x="315" y="49" width="50" height="50"&gt;
-                                        &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="2" label="2" enabled="true" visible="true" x="315" y="49" width="50" height="50"/&gt;
-                                      &lt;/XCUIElementTypeOther&gt;
-                                    &lt;/XCUIElementTypeOther&gt;
-                                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="81" y="59" width="213" height="30"&gt;
-                                      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="81" y="59" width="213" height="30"&gt;
-                                        &lt;XCUIElementTypeImage type="XCUIElementTypeImage" enabled="true" visible="false" x="81" y="59" width="213" height="30"/&gt;
-                                      &lt;/XCUIElementTypeOther&gt;
-                                    &lt;/XCUIElementTypeOther&gt;
-                                  &lt;/XCUIElementTypeOther&gt;
-                                &lt;/XCUIElementTypeOther&gt;
-                                &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page" label="Username Password LOGIN The currently accepted usernames for this application are (tap to autofill): standard_user locked_out_user problem_user And the password for all users is: secret_sauce Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page" enabled="true" visible="false" x="-113" y="0" width="376" height="812"&gt;
-                                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="-113" y="0" width="4" height="812"/&gt;
-                                  &lt;/XCUIElementTypeOther&gt;
-                                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page" label="PRODUCTS 󰝁 Sauce Labs Backpack $29.99 REMOVE 󰝁 Sauce Labs Bike Light $9.99 REMOVE 󰝁 Sauce Labs Bolt T-Shirt $15.99 󰇛 ADD TO CART 󰝁 Sauce Labs Fleece Jacket $49.99 󰇛 ADD TO CART 󰝁 Sauce Labs Onesie $7.99 󰇛 ADD TO CART 󰝁 Test.allTheThings() T-Shirt (Red) $15.99 󰇛 ADD TO CART     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page" enabled="true" visible="false" x="-113" y="0" width="376" height="812"&gt;
-                                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="-113" y="0" width="4" height="812"/&gt;
-                                  &lt;/XCUIElementTypeOther&gt;
-                                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page" label="YOUR CART QTY DESCRIPTION 󰩺 1 󰜾 Sauce Labs Backpack carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection. $29.99 REMOVE 󰩺 1 󰜾 Sauce Labs Bike Light A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included. $9.99 REMOVE CONTINUE SHOPPING CHECKOUT     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 3 pages Horizontal scroll bar, 1 page" enabled="true" visible="false" x="-113" y="0" width="376" height="812"&gt;
-                                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="-113" y="0" width="4" height="812"/&gt;
-                                  &lt;/XCUIElementTypeOther&gt;
-                                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page" label="CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-                                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="3" height="812"/&gt;
-                                    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page" label="CHECKOUT: INFORMATION CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page" enabled="true" visible="true" x="0" y="104" width="375" height="708"&gt;
-                                      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="CHECKOUT: INFORMATION" label="CHECKOUT: INFORMATION" enabled="true" visible="true" x="0" y="104" width="375" height="65"&gt;
-                                        &lt;XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="CHECKOUT: INFORMATION" name="CHECKOUT: INFORMATION" label="CHECKOUT: INFORMATION" enabled="true" visible="true" x="10" y="123" width="288" height="27"/&gt;
-                                      &lt;/XCUIElementTypeOther&gt;
-                                      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-Checkout: Your Info" label="CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy Vertical scroll bar, 2 pages Horizontal scroll bar, 1 page" enabled="true" visible="true" x="0" y="169" width="375" height="643"&gt;
-                                        &lt;XCUIElementTypeScrollView type="XCUIElementTypeScrollView" enabled="true" visible="true" x="0" y="169" width="375" height="643"&gt;
-                                          &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy" label="CANCEL CONTINUE     © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy" enabled="true" visible="true" x="0" y="189" width="375" height="912"&gt;
-                                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="189" width="375" height="249"&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="209" width="295" height="43"&gt;
-                                                &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="209" width="295" height="43"&gt;
-                                                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="209" width="295" height="40"&gt;
-                                                    &lt;XCUIElementTypeTextField type="XCUIElementTypeTextField" value="john" name="test-First Name" label="" enabled="true" visible="true" x="40" y="209" width="295" height="40"/&gt;
-                                                  &lt;/XCUIElementTypeOther&gt;
-                                                &lt;/XCUIElementTypeOther&gt;
-                                              &lt;/XCUIElementTypeOther&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="272" width="295" height="44"&gt;
-                                                &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="272" width="295" height="44"&gt;
-                                                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="272" width="295" height="41"&gt;
-                                                    &lt;XCUIElementTypeTextField type="XCUIElementTypeTextField" value="jo" name="test-Last Name" label="" enabled="true" visible="true" x="40" y="272" width="295" height="41"/&gt;
-                                                  &lt;/XCUIElementTypeOther&gt;
-                                                &lt;/XCUIElementTypeOther&gt;
-                                              &lt;/XCUIElementTypeOther&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="335" width="295" height="44"&gt;
-                                                &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="335" width="295" height="44"&gt;
-                                                  &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="335" width="295" height="41"&gt;
-                                                    &lt;XCUIElementTypeTextField type="XCUIElementTypeTextField" value="100022" name="test-Zip/Postal Code" label="" enabled="true" visible="true" x="40" y="335" width="295" height="41"/&gt;
-                                                  &lt;/XCUIElementTypeOther&gt;
-                                                &lt;/XCUIElementTypeOther&gt;
-                                              &lt;/XCUIElementTypeOther&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="40" y="380" width="295" height="56"/&gt;
-                                            &lt;/XCUIElementTypeOther&gt;
-                                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="CANCEL CONTINUE" label="CANCEL CONTINUE" enabled="true" visible="true" x="0" y="437" width="375" height="156"&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="10" y="440" width="355" height="4"/&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="CANCEL" label="CANCEL" enabled="true" visible="true" x="10" y="473" width="355" height="50"&gt;
-                                                &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-CANCEL" label="CANCEL" enabled="true" visible="true" x="12" y="475" width="351" height="46"/&gt;
-                                              &lt;/XCUIElementTypeOther&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="10" y="532" width="355" height="1"/&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="CONTINUE" label="CONTINUE" enabled="true" visible="false" x="10" y="542" width="355" height="51"&gt;
-                                                &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="test-CONTINUE" label="CONTINUE" enabled="true" visible="false" x="10" y="542" width="355" height="46"/&gt;
-                                              &lt;/XCUIElementTypeOther&gt;
-                                            &lt;/XCUIElementTypeOther&gt;
-                                            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="    © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy" label="    © 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy" enabled="true" visible="false" x="0" y="637" width="375" height="464"&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" name="   " label="   " enabled="true" visible="false" x="20" y="677" width="335" height="61"&gt;
-                                                &lt;XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="" name="" label="" enabled="true" visible="false" x="20" y="677" width="60" height="61"/&gt;
-                                                &lt;XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="" name="" label="" enabled="true" visible="false" x="111" y="677" width="61" height="61"/&gt;
-                                                &lt;XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="" name="" label="" enabled="true" visible="false" x="203" y="677" width="61" height="61"/&gt;
-                                                &lt;XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="" name="" label="" enabled="true" visible="false" x="295" y="677" width="60" height="61"/&gt;
-                                              &lt;/XCUIElementTypeOther&gt;
-                                              &lt;XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="© 2023 Sauce Labs. All Rights Reserved." name="© 2023 Sauce Labs. All Rights Reserved." label="© 2023 Sauce Labs. All Rights Reserved." enabled="true" visible="false" x="20" y="777" width="335" height="21"/&gt;
-                                              &lt;XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Terms of Service | Privacy Policy" name="Terms of Service | Privacy Policy" label="Terms of Service | Privacy Policy" enabled="true" visible="false" x="20" y="796" width="335" height="21"/&gt;
-                                              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="20" y="856" width="335" height="246"&gt;
-                                                &lt;XCUIElementTypeImage type="XCUIElementTypeImage" enabled="true" visible="false" x="20" y="856" width="335" height="245"/&gt;
-                                              &lt;/XCUIElementTypeOther&gt;
-                                            &lt;/XCUIElementTypeOther&gt;
-                                          &lt;/XCUIElementTypeOther&gt;
-                                          &lt;XCUIElementTypeOther type="XCUIElementTypeOther" value="0%" name="Vertical scroll bar, 2 pages" label="Vertical scroll bar, 2 pages" enabled="true" visible="true" x="342" y="169" width="30" height="609"/&gt;
-                                          &lt;XCUIElementTypeOther type="XCUIElementTypeOther" value="0%" name="Horizontal scroll bar, 1 page" label="Horizontal scroll bar, 1 page" enabled="true" visible="false" x="0" y="745" width="375" height="30"/&gt;
-                                        &lt;/XCUIElementTypeScrollView&gt;
-                                      &lt;/XCUIElementTypeOther&gt;
-                                    &lt;/XCUIElementTypeOther&gt;
-                                  &lt;/XCUIElementTypeOther&gt;
-                                &lt;/XCUIElementTypeOther&gt;
-                              &lt;/XCUIElementTypeOther&gt;
-                            &lt;/XCUIElementTypeOther&gt;
-                          &lt;/XCUIElementTypeOther&gt;
-                        &lt;/XCUIElementTypeOther&gt;
-                      &lt;/XCUIElementTypeOther&gt;
-                    &lt;/XCUIElementTypeOther&gt;
-                  &lt;/XCUIElementTypeOther&gt;
-                &lt;/XCUIElementTypeOther&gt;
-              &lt;/XCUIElementTypeOther&gt;
-            &lt;/XCUIElementTypeOther&gt;
-          &lt;/XCUIElementTypeOther&gt;
-        &lt;/XCUIElementTypeOther&gt;
-      &lt;/XCUIElementTypeOther&gt;
-    &lt;/XCUIElementTypeOther&gt;
-  &lt;/XCUIElementTypeWindow&gt;
-  &lt;XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="false" x="0" y="0" width="375" height="812"&gt;
-    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="375" height="812"&gt;
-      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="375" height="812"/&gt;
-      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="521" width="375" height="291"&gt;
-        &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="521" width="375" height="233"/&gt;
-      &lt;/XCUIElementTypeOther&gt;
-    &lt;/XCUIElementTypeOther&gt;
-  &lt;/XCUIElementTypeWindow&gt;
-  &lt;XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-    &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="375" height="812"&gt;
-      &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="521" width="375" height="291"&gt;
-        &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="521" width="375" height="233"&gt;
-          &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="521" width="375" height="291"&gt;
-            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="521" width="375" height="291"&gt;
-              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="521" width="375" height="291"/&gt;
-            &lt;/XCUIElementTypeOther&gt;
-          &lt;/XCUIElementTypeOther&gt;
-        &lt;/XCUIElementTypeOther&gt;
-        &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="521" width="375" height="233"&gt;
-          &lt;XCUIElementTypeKeyboard type="XCUIElementTypeKeyboard" enabled="true" visible="true" x="0" y="521" width="375" height="233"&gt;
-            &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="521" width="375" height="233"&gt;
-              &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="521" width="375" height="233"&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="q" label="q" enabled="true" visible="true" x="0" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="w" label="w" enabled="true" visible="true" x="37" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="e" label="e" enabled="true" visible="true" x="75" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="r" label="r" enabled="true" visible="true" x="112" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="t" label="t" enabled="true" visible="true" x="150" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="y" label="y" enabled="true" visible="true" x="187" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="u" label="u" enabled="true" visible="true" x="225" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="i" label="i" enabled="true" visible="true" x="262" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="o" label="o" enabled="true" visible="true" x="300" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="p" label="p" enabled="true" visible="true" x="337" y="528" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="a" label="a" enabled="true" visible="true" x="18" y="582" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="s" label="s" enabled="true" visible="true" x="56" y="582" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="d" label="d" enabled="true" visible="true" x="93" y="582" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="f" label="f" enabled="true" visible="true" x="131" y="582" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="g" label="g" enabled="true" visible="true" x="169" y="582" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="h" label="h" enabled="true" visible="true" x="206" y="582" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="j" label="j" enabled="true" visible="true" x="244" y="582" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="k" label="k" enabled="true" visible="true" x="281" y="582" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="l" label="l" enabled="true" visible="true" x="319" y="582" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeButton type="XCUIElementTypeButton" name="shift" label="shift" enabled="true" visible="true" x="0" y="636" width="48" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="z" label="z" enabled="true" visible="true" x="56" y="636" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="x" label="x" enabled="true" visible="true" x="93" y="636" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="c" label="c" enabled="true" visible="true" x="131" y="636" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="v" label="v" enabled="true" visible="true" x="169" y="636" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="b" label="b" enabled="true" visible="true" x="206" y="636" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="n" label="n" enabled="true" visible="true" x="244" y="636" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="m" label="m" enabled="true" visible="true" x="281" y="636" width="38" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="delete" label="delete" enabled="true" visible="true" x="327" y="636" width="48" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="more" label="numbers" enabled="true" visible="true" x="0" y="690" width="94" height="46"/&gt;
-                &lt;XCUIElementTypeKey type="XCUIElementTypeKey" name="space" label="space" enabled="true" visible="true" x="93" y="690" width="189" height="46"/&gt;
-                &lt;XCUIElementTypeButton type="XCUIElementTypeButton" name="Return" label="return" enabled="true" visible="true" x="281" y="690" width="94" height="46"/&gt;
-              &lt;/XCUIElementTypeOther&gt;
-            &lt;/XCUIElementTypeOther&gt;
-          &lt;/XCUIElementTypeKeyboard&gt;
-        &lt;/XCUIElementTypeOther&gt;
-        &lt;XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="521" width="375" height="291"&gt;
-          &lt;XCUIElementTypeButton type="XCUIElementTypeButton" name="Emoji" label="Emoji" enabled="true" visible="true" x="8" y="745" width="66" height="67"&gt;
-            &lt;XCUIElementTypeStaticText type="XCUIElementTypeStaticText" enabled="true" visible="false" x="8" y="745" width="0" height="1"/&gt;
-          &lt;/XCUIElementTypeButton&gt;
-        &lt;/XCUIElementTypeOther&gt;
-      &lt;/XCUIElementTypeOther&gt;
-    &lt;/XCUIElementTypeOther&gt;
-  &lt;/XCUIElementTypeWindow&gt;
-&lt;/XCUIElementTypeApplication&gt;&lt;/AppiumAUT&gt;</msg>
-<status status="PASS" starttime="20230124 16:34:32.677" endtime="20230124 16:34:32.677"/>
+<msg timestamp="20230124 17:06:42.584" level="INFO">['FAIL', "Element with locator 'xpath=//a' not found."]</msg>
+<status status="PASS" starttime="20230124 17:06:42.584" endtime="20230124 17:06:42.584"/>
 </kw>
-<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
-<doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" starttime="20230124 16:34:32.677" endtime="20230124 16:34:35.274"/>
-</kw>
-<status status="PASS" starttime="20230124 16:33:29.714" endtime="20230124 16:34:35.274"/>
+<status status="PASS" starttime="20230124 17:06:40.607" endtime="20230124 17:06:42.584"/>
 </test>
-<status status="PASS" starttime="20230124 16:33:29.436" endtime="20230124 16:34:35.274"/>
+<status status="PASS" starttime="20230124 17:06:40.287" endtime="20230124 17:06:42.584"/>
 </suite>
 <statistics>
 <total>
@@ -412,7 +56,7 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Demo5 Ios Nativeapp">Demo5 Ios Nativeapp</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo1">Demo1</stat>
 </suite>
 </statistics>
 <errors>
