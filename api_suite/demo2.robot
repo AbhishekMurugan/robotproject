@@ -1,10 +1,11 @@
 *** Settings ***
 Library     RequestsLibrary
+Library    OperatingSystem
 
-
+Suite Setup     Create Session    alias=petshop    url=https://petstore.swagger.io/v2
 *** Test Cases ***
 TC1 Get Pet
-        Create Session    alias=petshop    url=https://petstore.swagger.io/v2
+        [Tags]      smoke
         ${response}     GET On Session      alias=petshop       url=pet/101
         Status Should Be    200
 
@@ -16,11 +17,31 @@ TC2 Get Pet
         Should Contain    ${response_body}    Pet not found
 
 TC3
-    Create Session    alias=petshop    url=https://petstore.swagger.io/v2
     ${response}     GET On Session      alias=petshop       url=pet/findByStatus?status=sold
     Status Should Be    200
     Log    ${response.json()}
     Log    ${response.json()}[0][id]
+
+
+TC4 Add Pet
+    ${json}     Get Binary File     path=${EXECDIR}${/}test_data${/}data.json
+    &{header}   Create Dictionary       content-type=application/json
+    ${response}     POST On Session     alias=petshop       url=pet     data=${json}        headers=${header}
+    Status Should Be    200
+    Log    ${response.json()}
+
+TC5 Delete Pet
+    ${response}     DELETE On Session     alias=petshop       url=pet/5001
+    Status Should Be    200
+    Log    ${response.json()}
+
+
+TC6 Delete Pet Not Found
+    ${response}     DELETE On Session      alias=petshop       url=pet/1020        expected_status=404
+    Status Should Be    404
+    Log    ${response.reason}
+
+
 
 
 
